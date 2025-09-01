@@ -99,64 +99,165 @@ function Home() {
     const addFakeData = async () => {
         try {
             const students = [
-                { id: 1, username: "john.doe", email: "john.doe@example.com", firstName: "John", lastName: "Doe" },
-                { id: 2, username: "jane.smith", email: "jane.smith@example.com", firstName: "Jane", lastName: "Smith" },
-                { id: 3, username: "alice.jones", email: "alice.jones@example.com", firstName: "Alice", lastName: "Jones" },
-                { id: 4, username: "bob.brown", email: "bob.brown@example.com", firstName: "Bob", lastName: "Brown" },
-                { id: 5, username: "carol.white", email: "carol.white@example.com", firstName: "Carol", lastName: "White" },
-                { id: 6, username: "dave.black", email: "dave.black@example.com", firstName: "Dave", lastName: "Black" },
+                { id: 1,  username: "oliver.reed",     email: "oliver.reed@example.com",     firstName: "Oliver", lastName: "Reed" },
+                { id: 2,  username: "maya.patel",      email: "maya.patel@example.com",      firstName: "Maya",   lastName: "Patel" },
+                { id: 3,  username: "luca.rossi",      email: "luca.rossi@example.com",      firstName: "Luca",   lastName: "Rossi" },
+                { id: 4,  username: "noor.ahmed",      email: "noor.ahmed@example.com",      firstName: "Noor",   lastName: "Ahmed" },
+                { id: 5,  username: "eva.muller",      email: "eva.muller@example.com",      firstName: "Eva",    lastName: "Muller" },
+                { id: 6,  username: "kai.tanaka",      email: "kai.tanaka@example.com",      firstName: "Kai",    lastName: "Tanaka" },
+                { id: 7,  username: "priya.shah",      email: "priya.shah@example.com",      firstName: "Priya",  lastName: "Shah" },
+                { id: 8,  username: "tomasz.k",        email: "tomasz.k@example.com",        firstName: "Tomasz", lastName: "Kowalski" },
+                { id: 9,  username: "amina.diallo",    email: "amina.diallo@example.com",    firstName: "Amina",  lastName: "Diallo" },
+                { id: 10, username: "hugo.fernandes",  email: "hugo.fernandes@example.com",  firstName: "Hugo",   lastName: "Fernandes" }
             ];
-
+              
             const modules = [
-                { code: "COMP0001", name: "Computer Science for Beginners", mnc: false },
-                { code: "MA0005", name: "Advanced Mathematics", mnc: true },
-                { code: "PHYS0011", name: "Physics", mnc: false },
-                { code: "CHEM0012", name: "Chemistry", mnc: false },
-                { code: "BIO0013", name: "Biology", mnc: false },
+                // Mandatory
+                { code: "COMP0010", name: "Algorithms and Data Structures", mnc: true  },
+                { code: "MATH0021", name: "Linear Algebra",                 mnc: true  },
+              
+                // Optional (non-mandatory)
+                { code: "COMP0034", name: "Web Engineering",                mnc: false },
+                { code: "STAT0035", name: "Probability & Statistics",       mnc: false },
+                { code: "ECON0014", name: "Introduction to Microeconomics", mnc: false },
+                { code: "PHYS0011", name: "Classical Mechanics",            mnc: false }
             ];
-
+              
             const registrations = [
-                // Non-mandatory module registrations
-                { student: { id: 1 }, module: { code: "COMP0001" } },
-                { student: { id: 1 }, module: { code: "PHYS0011" } },
-                { student: { id: 2 }, module: { code: "COMP0001" } },
-                { student: { id: 2 }, module: { code: "CHEM0012" } },
-                { student: { id: 3 }, module: { code: "PHYS0011" } },
-                { student: { id: 3 }, module: { code: "BIO0013" } },
-                { student: { id: 4 }, module: { code: "COMP0001" } },
-                { student: { id: 4 }, module: { code: "PHYS0011" } },
-                { student: { id: 5 }, module: { code: "CHEM0012" } },
-                { student: { id: 5 }, module: { code: "BIO0013" } },
-                { student: { id: 6 }, module: { code: "COMP0001" } },
-                { student: { id: 6 }, module: { code: "PHYS0011" } },
+                // NOTE: Only non-mandatory modules are listed here.
+                // Student 1: +3 optional (total load: 5 with mandatory)
+                { student: { id: 1 },  module: { code: "COMP0034" } },
+                { student: { id: 1 },  module: { code: "STAT0035" } },
+                { student: { id: 1 },  module: { code: "ECON0014" } },
+              
+                // Student 2 (struggling): +2 optional (total load: 4 with mandatory)
+                { student: { id: 2 },  module: { code: "COMP0034" } },
+                { student: { id: 2 },  module: { code: "PHYS0011" } },
+              
+                // Student 3 (top performer): +4 optional (total load: 6)
+                { student: { id: 3 },  module: { code: "COMP0034" } },
+                { student: { id: 3 },  module: { code: "STAT0035" } },
+                { student: { id: 3 },  module: { code: "ECON0014" } },
+                { student: { id: 3 },  module: { code: "PHYS0011" } },
+              
+                // Student 4: +3 optional (total load: 5)
+                { student: { id: 4 },  module: { code: "STAT0035" } },
+                { student: { id: 4 },  module: { code: "ECON0014" } },
+                { student: { id: 4 },  module: { code: "PHYS0011" } },
+              
+                // Student 5: +2 optional (total load: 4)
+                { student: { id: 5 },  module: { code: "STAT0035" } },
+                { student: { id: 5 },  module: { code: "ECON0014" } },
+              
+                // Student 6: +4 optional (total load: 6)
+                { student: { id: 6 },  module: { code: "COMP0034" } },
+                { student: { id: 6 },  module: { code: "STAT0035" } },
+                { student: { id: 6 },  module: { code: "ECON0014" } },
+                { student: { id: 6 },  module: { code: "PHYS0011" } },
+              
+                // Student 7: +3 optional (total load: 5)
+                { student: { id: 7 },  module: { code: "ECON0014" } },
+                { student: { id: 7 },  module: { code: "STAT0035" } },
+                { student: { id: 7 },  module: { code: "COMP0034" } },
+              
+                // Student 8: +2 optional (total load: 4)
+                { student: { id: 8 },  module: { code: "COMP0034" } },
+                { student: { id: 8 },  module: { code: "STAT0035" } },
+              
+                // Student 9: +3 optional (total load: 5)
+                { student: { id: 9 },  module: { code: "PHYS0011" } },
+                { student: { id: 9 },  module: { code: "ECON0014" } },
+                { student: { id: 9 },  module: { code: "STAT0035" } },
+              
+                // Student 10: +2 optional (total load: 4)
+                { student: { id: 10 }, module: { code: "COMP0034" } },
+                { student: { id: 10 }, module: { code: "ECON0014" } }
             ];
-
+              
             const grades = [
-                // Student 1: Overall high grades
-                { score: 86, student: { id: 1 }, module: { code: "COMP0001" } },
-                { score: 91, student: { id: 1 }, module: { code: "PHYS0011" } },
-                { score: 87, student: { id: 1 }, module: { code: "MA0005" } },
-                // Student 2: Overall low grades
-                { score: 34, student: { id: 2 }, module: { code: "COMP0001" } },
-                { score: 38, student: { id: 2 }, module: { code: "CHEM0012" } },
-                { score: 40, student: { id: 2 }, module: { code: "MA0005" } },
-                // Student 3: Mixed grades
-                { score: 46, student: { id: 3 }, module: { code: "PHYS0011" } },
-                { score: 50, student: { id: 3 }, module: { code: "BIO0013" } },
-                { score: 54, student: { id: 3 }, module: { code: "MA0005" } },
-                // Student 4: Overall high grades
-                { score: 97, student: { id: 4 }, module: { code: "COMP0001" } },
-                { score: 90, student: { id: 4 }, module: { code: "PHYS0011" } },
-                { score: 89, student: { id: 4 }, module: { code: "MA0005" } },
-                // Student 5: Overall low grades
-                { score: 31, student: { id: 5 }, module: { code: "CHEM0012" } },
-                { score: 33, student: { id: 5 }, module: { code: "BIO0013" } },
-                { score: 40, student: { id: 5 }, module: { code: "MA0005" } },
-                // Student 6: Mixed grades
-                { score: 71, student: { id: 6 }, module: { code: "COMP0001" } },
-                { score: 74, student: { id: 6 }, module: { code: "PHYS0011" } },
-                { score: 67, student: { id: 6 }, module: { code: "MA0005" } },
+                // Mandatory modules (all students take these)
+                // COMP0010 and MATH0021
+                { score: 78, student: { id: 1 },  module: { code: "COMP0010" } },
+                { score: 72, student: { id: 1 },  module: { code: "MATH0021" } },
+              
+                { score: 33, student: { id: 2 },  module: { code: "COMP0010" } },
+                { score: 37, student: { id: 2 },  module: { code: "MATH0021" } },
+              
+                { score: 95, student: { id: 3 },  module: { code: "COMP0010" } },
+                { score: 92, student: { id: 3 },  module: { code: "MATH0021" } },
+              
+                { score: 67, student: { id: 4 },  module: { code: "COMP0010" } },
+                { score: 61, student: { id: 4 },  module: { code: "MATH0021" } },
+              
+                { score: 55, student: { id: 5 },  module: { code: "COMP0010" } },
+                { score: 49, student: { id: 5 },  module: { code: "MATH0021" } },
+              
+                { score: 80, student: { id: 6 },  module: { code: "COMP0010" } },
+                { score: 75, student: { id: 6 },  module: { code: "MATH0021" } },
+              
+                { score: 62, student: { id: 7 },  module: { code: "COMP0010" } },
+                { score: 57, student: { id: 7 },  module: { code: "MATH0021" } },
+              
+                { score: 44, student: { id: 8 },  module: { code: "COMP0010" } },
+                { score: 42, student: { id: 8 },  module: { code: "MATH0021" } },
+              
+                { score: 52, student: { id: 9 },  module: { code: "COMP0010" } },
+                { score: 46, student: { id: 9 },  module: { code: "MATH0021" } },
+              
+                { score: 41, student: { id: 10 }, module: { code: "COMP0010" } },
+                { score: 43, student: { id: 10 }, module: { code: "MATH0021" } },
+              
+                // Optional modules — only for students who registered (see registrations)
+                // Student 1 optionals
+                { score: 74, student: { id: 1 },  module: { code: "COMP0034" } },
+                { score: 68, student: { id: 1 },  module: { code: "STAT0035" } },
+                { score: 63, student: { id: 1 },  module: { code: "ECON0014" } },
+              
+                // Student 2 optionals (struggling)
+                { score: 35, student: { id: 2 },  module: { code: "COMP0034" } },
+                { score: 29, student: { id: 2 },  module: { code: "PHYS0011" } },
+              
+                // Student 3 optionals (top performer)
+                { score: 94, student: { id: 3 },  module: { code: "COMP0034" } },
+                { score: 90, student: { id: 3 },  module: { code: "STAT0035" } },
+                { score: 88, student: { id: 3 },  module: { code: "ECON0014" } },
+                { score: 91, student: { id: 3 },  module: { code: "PHYS0011" } },
+              
+                // Student 4 optionals
+                { score: 64, student: { id: 4 },  module: { code: "STAT0035" } },
+                { score: 70, student: { id: 4 },  module: { code: "ECON0014" } },
+                { score: 58, student: { id: 4 },  module: { code: "PHYS0011" } },
+              
+                // Student 5 optionals
+                { score: 52, student: { id: 5 },  module: { code: "STAT0035" } },
+                { score: 47, student: { id: 5 },  module: { code: "ECON0014" } },
+              
+                // Student 6 optionals
+                { score: 78, student: { id: 6 },  module: { code: "COMP0034" } },
+                { score: 82, student: { id: 6 },  module: { code: "STAT0035" } },
+                { score: 69, student: { id: 6 },  module: { code: "ECON0014" } },
+                { score: 73, student: { id: 6 },  module: { code: "PHYS0011" } },
+              
+                // Student 7 optionals
+                { score: 74, student: { id: 7 },  module: { code: "ECON0014" } },
+                { score: 66, student: { id: 7 },  module: { code: "STAT0035" } },
+                { score: 60, student: { id: 7 },  module: { code: "COMP0034" } },
+              
+                // Student 8 optionals
+                { score: 59, student: { id: 8 },  module: { code: "COMP0034" } },
+                { score: 61, student: { id: 8 },  module: { code: "STAT0035" } },
+              
+                // Student 9 optionals
+                { score: 55, student: { id: 9 },  module: { code: "PHYS0011" } },
+                { score: 50, student: { id: 9 },  module: { code: "ECON0014" } },
+                { score: 48, student: { id: 9 },  module: { code: "STAT0035" } },
+              
+                // Student 10 optionals (borderline)
+                { score: 45, student: { id: 10 }, module: { code: "COMP0034" } },
+                { score: 39, student: { id: 10 }, module: { code: "ECON0014" } }
             ];
+              
+              
 
             // Add students
             for (const student of students) {
@@ -202,7 +303,7 @@ function Home() {
                 </Breadcrumbs>
 
                 <Typography variant="h4" sx={{ mt: 2, mb: 3, fontWeight: "bold" }}>
-                    Welcome to the Student Grade Management System
+                    Student Grade Management Program
                 </Typography>
 
                 {error && (
@@ -319,14 +420,6 @@ function Home() {
                     </Grid>
                 </Grid>
 
-                <Divider sx={{ mt: 4 }} />
-                <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ textAlign: "center", mt: 2 }}
-                >
-                    © 2024 Student Grade Management System. All rights reserved.
-                </Typography>
             </Box>
         </App>
     );
