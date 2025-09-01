@@ -489,15 +489,6 @@ function Insights() {
                         </Paper>
                     </Grid>
                 </Grid>
-
-                <Divider sx={{ mt: 4 }} />
-                <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ textAlign: "center", mt: 2 }}
-                >
-                    © 2024 Student Grade Management System. All rights reserved.
-                </Typography>
             </Box>
         </App>
     );
