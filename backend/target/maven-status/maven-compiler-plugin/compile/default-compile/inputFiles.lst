@@ -1,0 +1,14 @@
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/CorsConfig.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/Group03Application.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/controller/Controller.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/exceptions/InvalidGradeException.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/exceptions/NoGradeAvailableException.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/exceptions/NoRegistrationException.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/grade/Grade.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/grade/GradeRepository.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/module/Module.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/module/ModuleRepository.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/registration/Registration.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/registration/RegistrationRepository.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/student/Student.java
+/Users/samuelktorza/Downloads/G-03-Final/backend/src/main/java/uk/ac/ucl/comp0010/student/StudentRepository.java
