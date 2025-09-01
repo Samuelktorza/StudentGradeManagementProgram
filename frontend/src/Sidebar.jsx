@@ -7,8 +7,8 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar-header">
-                <img src={ReactLogo} alt="Logo" className="sidebar-logo" />
-                <h1 className="sidebar-title">SGMS</h1>
+
+                <h1 className="sidebar-title">SGMP</h1>
             </div>
             <div className="sidebar-menu">
                 <Link to="/" className="sidebar-item">
