@@ -4,7 +4,7 @@
 Welcome to our Student Grade Management Program
 
 ## Running Instructions
-1. Git clone the repository: https://github.com/ucl-comp0010-2024/G-03
+1. Git clone the repository: https://github.com/Samuelktorza/StudentGradeManagementProgram.git
 2. Open 2 Command line windows
 3. Navigate to the backend folder in the first window and to the frontend folder in the other
 
